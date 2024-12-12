@@ -39,7 +39,13 @@ public class BasicNumProperties {
         }
         return factorial;
     }
-
+    public Parity calculateParity(Long number){
+        if(number % 2 == 0){
+            return Parity.EVEN;
+        }else{
+            return Parity.ODD;
+        }
+    }
 
 
 //    public boolean isPrime(Long number){
