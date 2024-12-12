@@ -18,13 +18,14 @@ public class BasicNumProperties {
         }
         return divisors;
     }
+
     public Long calculateDivisorsCount(List<Long> divisors){
         return (long) divisors.size();
     }
 
     public List<Long> calculateMultiples(Long number){
         List<Long> multiples = new ArrayList<Long>();
-        for(Long i = number ; i <= Long.MAX_VALUE && multiples.size() < 10; i += number){
+        for(Long i = number; multiples.size() < 10; i += number){
             if(i % number == 0){
                 multiples.add(i);
             }
@@ -39,6 +40,7 @@ public class BasicNumProperties {
         }
         return factorial;
     }
+
     public Parity calculateParity(Long number){
         if(number % 2 == 0){
             return Parity.EVEN;
@@ -47,14 +49,15 @@ public class BasicNumProperties {
         }
     }
 
+    public boolean isPerfect(Long number, List<Long> divisors ){
+        var sum = divisors.stream().reduce(0L,Long::sum);
+        sum = sum - number;
+        System.out.println(sum);
+        return sum.equals(number);
+    }
 
-//    public boolean isPrime(Long number){
-//
-//    }
-//    public boolean isPerfect(Long number){
-//
-//    }
-
-
+    public boolean isPrime(Long divisorsCount){
+        return divisorsCount == 2;
+    }
 
 }
