@@ -1,6 +1,6 @@
 package diegoVSC42.what_the_number.service;
 
-import diegoVSC42.what_the_number.domain.NumberInfo;
+import diegoVSC42.what_the_number.domain.Parity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class BasicNumProperties {
 
-    public  List<Long> divisors(Long number){
+    public  List<Long> calculateDivisors(Long number){
         List<Long> divisors = new ArrayList<Long>();
         for(int i = 1; i <= number;i++){
             if(number % i == 0){
@@ -18,11 +18,11 @@ public class BasicNumProperties {
         }
         return divisors;
     }
-    public Long divisorsCount(List<Long> divisors){
+    public Long calculateDivisorsCount(List<Long> divisors){
         return (long) divisors.size();
     }
 
-    public List<Long> multiples(Long number){
+    public List<Long> calculateMultiples(Long number){
         List<Long> multiples = new ArrayList<Long>();
         for(Long i = number ; i <= Long.MAX_VALUE && multiples.size() < 10; i += number){
             if(i % number == 0){
@@ -31,11 +31,17 @@ public class BasicNumProperties {
         }
         return multiples;
     }
-//
-//    public Long fatorial(Long number){
-//
-//    }
-//
+
+    public Long calculateFatorial(Long number){
+        Long factorial = number;
+        for(Long i = number-1; i > 1 ; i--){
+            factorial = factorial * i;
+        }
+        return factorial;
+    }
+
+
+
 //    public boolean isPrime(Long number){
 //
 //    }

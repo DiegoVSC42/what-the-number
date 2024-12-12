@@ -8,9 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class WhatTheNumberApplication{
-
-
 	public static void main(String[] args){
 		SpringApplication.run(WhatTheNumberApplication.class, args);
+		BasicNumProperties bnp = new BasicNumProperties();
 	}
 }

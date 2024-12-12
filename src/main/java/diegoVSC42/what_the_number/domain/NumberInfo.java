@@ -19,7 +19,7 @@ public class NumberInfo {
     List<Long> divisors;
     Long divisorsCount;
     List<Long> tenFirstMultiples;
-//    Long factorial;
+    Long factorial;
 //    Parity parity;
 //    boolean isPrime;
 //    boolean isPerfect;
@@ -28,8 +28,9 @@ public class NumberInfo {
         BasicNumProperties bnp = new BasicNumProperties();
 
         this.value = value;
-        this.divisors = bnp.divisors(value);
-        this.divisorsCount = bnp.divisorsCount(this.divisors);
-        this.tenFirstMultiples = bnp.multiples(value);
+        this.divisors = bnp.calculateDivisors(value);
+        this.divisorsCount = bnp.calculateDivisorsCount(this.divisors);
+        this.tenFirstMultiples = bnp.calculateMultiples(value);
+        this.factorial = bnp.calculateFatorial(value);
     }
 }
