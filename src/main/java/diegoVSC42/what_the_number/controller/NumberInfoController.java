@@ -1,6 +1,5 @@
 package diegoVSC42.what_the_number.controller;
 
-import diegoVSC42.what_the_number.domain.NumberInfo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,8 +12,9 @@ public class NumberInfoController {
 
     @GetMapping("/{number}")
     public ResponseEntity getNumberInfo(@PathVariable("number") Long number) {
-            NumberInfo numberInfo = new NumberInfo();
-            numberInfo.calculate(number);
-            return ResponseEntity.ok(numberInfo);
+        diegoVSC42.what_the_number.domain.NumberInfo numberInfo = new diegoVSC42.what_the_number.domain.NumberInfo();
+        numberInfo.calculateBNP(number);
+        numberInfo.calculateSP(number);
+        return ResponseEntity.ok(numberInfo);
     }
 }

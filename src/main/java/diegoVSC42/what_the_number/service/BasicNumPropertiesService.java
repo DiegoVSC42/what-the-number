@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BasicNumProperties {
+public class BasicNumPropertiesService {
 
     public  List<Long> calculateDivisors(Long number){
         List<Long> divisors = new ArrayList<Long>();
@@ -52,7 +52,6 @@ public class BasicNumProperties {
     public boolean isPerfect(Long number, List<Long> divisors ){
         var sum = divisors.stream().reduce(0L,Long::sum);
         sum = sum - number;
-        System.out.println(sum);
         return sum.equals(number);
     }
 
