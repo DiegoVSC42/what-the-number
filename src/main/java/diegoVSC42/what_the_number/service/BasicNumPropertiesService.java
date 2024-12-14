@@ -10,7 +10,7 @@ import java.util.List;
 public class BasicNumPropertiesService {
 
     public  List<Long> calculateDivisors(Long number){
-        List<Long> divisors = new ArrayList<Long>();
+        List<Long> divisors = new ArrayList<>();
         for(int i = 1; i <= number;i++){
             if(number % i == 0){
                 divisors.add((long) i);
@@ -24,7 +24,7 @@ public class BasicNumPropertiesService {
     }
 
     public List<Long> calculateMultiples(Long number){
-        List<Long> multiples = new ArrayList<Long>();
+        List<Long> multiples = new ArrayList<>();
         for(Long i = number; multiples.size() < 10; i += number){
             if(i % number == 0){
                 multiples.add(i);
@@ -33,9 +33,9 @@ public class BasicNumPropertiesService {
         return multiples;
     }
 
-    public Long calculateFatorial(Long number){
+    public Long calculateFactorial(Long number){
         Long factorial = number;
-        for(Long i = number-1; i > 1 ; i--){
+        for(long i = number-1; i > 1 ; i--){
             factorial = factorial * i;
         }
         return factorial;

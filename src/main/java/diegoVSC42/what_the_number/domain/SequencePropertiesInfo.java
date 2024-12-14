@@ -12,6 +12,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SequencePropertiesInfo {
-    FibonacciSequence fibonacciSequence;
-    TriangularSequence triangularSequence;
+    private FibonacciSequence fibonacciSequence;
+    private TriangularSequence triangularSequence;
 }

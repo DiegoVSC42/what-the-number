@@ -13,11 +13,11 @@ import java.util.List;
 @AllArgsConstructor
 public class BasicNumPropertiesInfo {
 
-    List<Long> divisors;
-    Long divisorsCount;
-    List<Long> tenFirstMultiples;
-    Long factorial;
-    Parity parity;
-    boolean isPerfect;
-    boolean isPrime;
+    private List<Long> divisors;
+    private Long divisorsCount;
+    private List<Long> tenFirstMultiples;
+    private Long factorial;
+    private Parity parity;
+    private boolean isPerfect;
+    private boolean isPrime;
 }

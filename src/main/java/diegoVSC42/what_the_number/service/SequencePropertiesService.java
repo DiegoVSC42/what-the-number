@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 public class SequencePropertiesService {
     public FibonacciSequence calculateFibonacciSequence(Long number) {
 
-        Long nthFibonacciterm = 1L;
-        Long position = number;
+        long nthFibonacciTerm = 1L;
+        long position = number;
         boolean isInFibonacci = false;
 
-        Long f1 = 1L;
-        Long f2 = 1L;
+        long f1 = 1L;
+        long f2 = 1L;
         long fn = 1L;
 
-        for(Long i = 2L; i <= number; i++) {
+        for(long i = 2L; i <= number; i++) {
 
             if (fn == number){
                 isInFibonacci = true;
@@ -27,26 +27,25 @@ public class SequencePropertiesService {
 
             f2 = f1;
             f1 = fn;
-            nthFibonacciterm = fn;
+            nthFibonacciTerm = fn;
         }
 
         if(!isInFibonacci && number != 1L){
             position = 0L;
         }
 
-        FibonacciSequence fibonacciSequence = new FibonacciSequence(nthFibonacciterm,position,isInFibonacci);
-        return fibonacciSequence;
+        return new FibonacciSequence(nthFibonacciTerm,position,isInFibonacci);
     }
 
     public TriangularSequence calculateTriangularSequence(Long number) {
 
-        Long nthTriangularTerm = (number*(number+1))/2;
-        Long position = 0L;
+        long nthTriangularTerm = (number*(number+1))/2;
+        long position = 0L;
         boolean isInTriangular = false;
 
-        Long triangularFactor = 0L;
+        long triangularFactor;
 
-        for(Long i = 1L; i <= number; i++) {
+        for(long i = 1L; i <= number; i++) {
             triangularFactor = (i*(i+1))/2;
             if(triangularFactor == number){
                 isInTriangular = true;
@@ -54,8 +53,7 @@ public class SequencePropertiesService {
             }
         }
 
-        TriangularSequence triangularSequence = new TriangularSequence(nthTriangularTerm,position,isInTriangular);
-        return triangularSequence;
+        return new TriangularSequence(nthTriangularTerm,position,isInTriangular);
 
     }
 }

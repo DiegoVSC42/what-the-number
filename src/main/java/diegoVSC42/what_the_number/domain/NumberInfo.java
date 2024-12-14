@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,15 +20,15 @@ public class NumberInfo {
 
     public void calculateBNP(Long value){
         BasicNumPropertiesInfo properties = new BasicNumPropertiesInfo();
-        BasicNumPropertiesService bnps = new BasicNumPropertiesService();
+        BasicNumPropertiesService basicNumPropertiesService = new BasicNumPropertiesService();
 
-        properties.setDivisors(bnps.calculateDivisors(value));
-        properties.setDivisorsCount(bnps.calculateDivisorsCount(properties.getDivisors()));
-        properties.setTenFirstMultiples(bnps.calculateMultiples(value));
-        properties.setFactorial(bnps.calculateFatorial(value));
-        properties.setPerfect(bnps.isPerfect(value, properties.getDivisors()));
-        properties.setParity(bnps.calculateParity(value));
-        properties.setPrime(bnps.isPrime(properties.getDivisorsCount()));
+        properties.setDivisors(basicNumPropertiesService.calculateDivisors(value));
+        properties.setDivisorsCount(basicNumPropertiesService.calculateDivisorsCount(properties.getDivisors()));
+        properties.setTenFirstMultiples(basicNumPropertiesService.calculateMultiples(value));
+        properties.setFactorial(basicNumPropertiesService.calculateFactorial(value));
+        properties.setPerfect(basicNumPropertiesService.isPerfect(value, properties.getDivisors()));
+        properties.setParity(basicNumPropertiesService.calculateParity(value));
+        properties.setPrime(basicNumPropertiesService.isPrime(properties.getDivisorsCount()));
 
         this.value = value;
         this.basicNumPropertiesInfo = properties;
@@ -38,10 +36,10 @@ public class NumberInfo {
 
     public void calculateSP(Long value){
         SequencePropertiesInfo properties = new SequencePropertiesInfo();
-        SequencePropertiesService sps = new SequencePropertiesService();
+        SequencePropertiesService sequencePropertiesService = new SequencePropertiesService();
 
-        properties.setFibonacciSequence(sps.calculateFibonacciSequence(value));
-        properties.setTriangularSequence(sps.calculateTriangularSequence(value));
+        properties.setFibonacciSequence(sequencePropertiesService.calculateFibonacciSequence(value));
+        properties.setTriangularSequence(sequencePropertiesService.calculateTriangularSequence(value));
         this.value = value;
         this.sequencePropertiesInfo = properties;
     }
