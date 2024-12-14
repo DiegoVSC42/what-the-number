@@ -41,7 +41,7 @@ public class NumberInfo {
         SequencePropertiesService sps = new SequencePropertiesService();
 
         properties.setFibonacciSequence(sps.calculateFibonacciSequence(value));
-
+        properties.setTriangularSequence(sps.calculateTriangularSequence(value));
         this.value = value;
         this.sequencePropertiesInfo = properties;
     }
