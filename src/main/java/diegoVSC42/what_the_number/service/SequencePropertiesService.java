@@ -8,16 +8,12 @@ public class SequencePropertiesService {
     public FibonacciSequence calculateFibonacciSequence(Long number) {
 
         Long nthFibonacciterm = 1L;
-        Long position = 1L;
-        boolean isInFibonacci = true;
+        Long position = number;
+        boolean isInFibonacci = false;
 
         Long f1 = 1L;
         Long f2 = 1L;
         long fn = 1L;
-
-        if(number == 2){
-            position = 2L;
-        }
 
         for(Long i = 2L; i <= number; i++) {
 
@@ -31,6 +27,10 @@ public class SequencePropertiesService {
             f2 = f1;
             f1 = fn;
             nthFibonacciterm = fn;
+        }
+
+        if(!isInFibonacci && number != 1L){
+            position = 0L;
         }
 
         FibonacciSequence fibonacciSequence = new FibonacciSequence(nthFibonacciterm,position,isInFibonacci);
