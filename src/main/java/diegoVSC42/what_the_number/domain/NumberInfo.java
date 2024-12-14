@@ -1,5 +1,7 @@
 package diegoVSC42.what_the_number.domain;
 
+import diegoVSC42.what_the_number.domain.properties.BasicNumPropertiesInfo;
+import diegoVSC42.what_the_number.domain.properties.SequencePropertiesInfo;
 import diegoVSC42.what_the_number.service.BasicNumPropertiesService;
 import diegoVSC42.what_the_number.service.SequencePropertiesService;
 import lombok.AllArgsConstructor;
@@ -40,6 +42,8 @@ public class NumberInfo {
 
         properties.setFibonacciSequence(sequencePropertiesService.calculateFibonacciSequence(value));
         properties.setTriangularSequence(sequencePropertiesService.calculateTriangularSequence(value));
+        properties.setSquareSequence(sequencePropertiesService.calculateSquareSequence(value));
+
         this.value = value;
         this.sequencePropertiesInfo = properties;
     }

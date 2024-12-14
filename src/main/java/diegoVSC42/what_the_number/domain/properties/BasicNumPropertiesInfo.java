@@ -1,5 +1,6 @@
-package diegoVSC42.what_the_number.domain;
+package diegoVSC42.what_the_number.domain.properties;
 
+import diegoVSC42.what_the_number.domain.Parity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

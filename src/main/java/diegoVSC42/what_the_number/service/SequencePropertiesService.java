@@ -1,6 +1,7 @@
 package diegoVSC42.what_the_number.service;
 
 import diegoVSC42.what_the_number.domain.sequences.FibonacciSequence;
+import diegoVSC42.what_the_number.domain.sequences.SquareSequence;
 import diegoVSC42.what_the_number.domain.sequences.TriangularSequence;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,8 @@ public class SequencePropertiesService {
         if(number > 2){
             for(long i = 2; i <= number; i++) {
 
+                nthFibonacciTerm = fn;
+
                 if (fn == number){
                     isInFibonacci = true;
                     position = i;
@@ -29,7 +32,7 @@ public class SequencePropertiesService {
                 f2 = f1;
                 f1 = fn;
 
-                nthFibonacciTerm = fn;
+
             }
         }else if(number == 1){
             position = 1L;
@@ -38,17 +41,13 @@ public class SequencePropertiesService {
             position = 3L;
             isInFibonacci = true;
         }
-
-
-
-
         return new FibonacciSequence(nthFibonacciTerm,position,isInFibonacci);
     }
 
     public TriangularSequence calculateTriangularSequence(Long number) {
 
         long nthTriangularTerm = (number*(number+1))/2;
-        long position = 0;
+        Long position = null;
         boolean isInTriangular = false;
 
         long triangularFactor;
@@ -62,6 +61,27 @@ public class SequencePropertiesService {
         }
 
         return new TriangularSequence(nthTriangularTerm,position,isInTriangular);
+
+    }
+
+    public SquareSequence calculateSquareSequence(Long number) {
+        long nthSquareTerm = number*number;
+        Long position = null;
+        boolean isInSquare = false;
+
+        if(number > 1){
+            for(long i = 0; i <= number/2; i++) {
+                long square = (i*i);
+                if(square == number){
+                    isInSquare = true;
+                    position = i;
+                }
+            }
+        }else{
+            position = number;
+            isInSquare = true;
+        }
+        return new SquareSequence(nthSquareTerm,position,isInSquare);
 
     }
 }
