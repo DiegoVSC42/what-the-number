@@ -8,31 +8,39 @@ import org.springframework.stereotype.Service;
 public class SequencePropertiesService {
     public FibonacciSequence calculateFibonacciSequence(Long number) {
 
-        long nthFibonacciTerm = 1L;
-        long position = number;
+        long nthFibonacciTerm = 1;
+        Long position = null;
         boolean isInFibonacci = false;
 
-        long f1 = 1L;
-        long f2 = 1L;
-        long fn = 1L;
+        long f1 = 1;
+        long f2 = 1;
+        long fn = 1;
 
-        for(long i = 2L; i <= number; i++) {
+        if(number > 2){
+            for(long i = 2; i <= number; i++) {
 
-            if (fn == number){
-                isInFibonacci = true;
-                position = i;
+                if (fn == number){
+                    isInFibonacci = true;
+                    position = i;
+                }
+
+                fn = f1 + f2;
+
+                f2 = f1;
+                f1 = fn;
+
+                nthFibonacciTerm = fn;
             }
-
-            fn = f1 + f2;
-
-            f2 = f1;
-            f1 = fn;
-            nthFibonacciTerm = fn;
+        }else if(number == 1){
+            position = 1L;
+            isInFibonacci = true;
+        }else if(number == 2){
+            position = 3L;
+            isInFibonacci = true;
         }
 
-        if(!isInFibonacci && number != 1L){
-            position = 0L;
-        }
+
+
 
         return new FibonacciSequence(nthFibonacciTerm,position,isInFibonacci);
     }
@@ -40,12 +48,12 @@ public class SequencePropertiesService {
     public TriangularSequence calculateTriangularSequence(Long number) {
 
         long nthTriangularTerm = (number*(number+1))/2;
-        long position = 0L;
+        long position = 0;
         boolean isInTriangular = false;
 
         long triangularFactor;
 
-        for(long i = 1L; i <= number; i++) {
+        for(long i = 1; i <= number; i++) {
             triangularFactor = (i*(i+1))/2;
             if(triangularFactor == number){
                 isInTriangular = true;
