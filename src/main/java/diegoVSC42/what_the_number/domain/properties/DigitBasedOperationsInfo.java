@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdvancedNumPropertiesInfo {
-    private boolean isHarshad;
-    private boolean isPalindrome;
-    private boolean isMersenne;
+public class DigitBasedOperationsInfo {
+    private Long digitNumber;
+    private Long digitSum;
+    private Long digitProduct;
 }

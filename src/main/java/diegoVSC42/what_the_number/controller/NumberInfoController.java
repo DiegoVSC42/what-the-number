@@ -17,6 +17,7 @@ public class NumberInfoController {
         numberInfo.calculateBNP(number);
         numberInfo.calculateSP(number);
         numberInfo.calculateANP(number);
+        numberInfo.calculateDBO(number);
         return ResponseEntity.ok(numberInfo);
     }
 }

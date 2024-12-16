@@ -2,9 +2,11 @@ package diegoVSC42.what_the_number.domain;
 
 import diegoVSC42.what_the_number.domain.properties.AdvancedNumPropertiesInfo;
 import diegoVSC42.what_the_number.domain.properties.BasicNumPropertiesInfo;
+import diegoVSC42.what_the_number.domain.properties.DigitBasedOperationsInfo;
 import diegoVSC42.what_the_number.domain.properties.SequencePropertiesInfo;
 import diegoVSC42.what_the_number.service.AdvancedNumPropertiesService;
 import diegoVSC42.what_the_number.service.BasicNumPropertiesService;
+import diegoVSC42.what_the_number.service.DigitBasedOperationsService;
 import diegoVSC42.what_the_number.service.SequencePropertiesService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +24,7 @@ public class NumberInfo {
     BasicNumPropertiesInfo basicNumPropertiesInfo;
     SequencePropertiesInfo sequencePropertiesInfo;
     AdvancedNumPropertiesInfo advancedNumPropertiesInfo;
+    DigitBasedOperationsInfo digitBasedOperationsInfo;
 
     public void calculateBNP(Long value) {
         BasicNumPropertiesInfo properties = new BasicNumPropertiesInfo();
@@ -63,4 +66,14 @@ public class NumberInfo {
         this.advancedNumPropertiesInfo = properties;
     }
 
+    public void calculateDBO(Long value) {
+        DigitBasedOperationsInfo properties = new DigitBasedOperationsInfo();
+        DigitBasedOperationsService digitBasedOperationsService = new DigitBasedOperationsService();
+
+        properties.setDigitNumber(digitBasedOperationsService.calculateDigitNumber(value));
+
+
+        this.value = value;
+        this.digitBasedOperationsInfo = properties;
+    }
 }
