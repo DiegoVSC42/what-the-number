@@ -70,9 +70,9 @@ public class NumberInfo {
         DigitBasedOperationsInfo properties = new DigitBasedOperationsInfo();
         DigitBasedOperationsService digitBasedOperationsService = new DigitBasedOperationsService();
 
-        properties.setDigitNumber(digitBasedOperationsService.calculateDigitNumber(value));
-
-
+        properties.setNumberOfDigits(digitBasedOperationsService.calculateNumberOfDigits(value));
+        properties.setDigitSum(digitBasedOperationsService.calculateDigitSum(value));
+        properties.setDigitProduct(digitBasedOperationsService.calculateDigitProduct(value));
         this.value = value;
         this.digitBasedOperationsInfo = properties;
     }

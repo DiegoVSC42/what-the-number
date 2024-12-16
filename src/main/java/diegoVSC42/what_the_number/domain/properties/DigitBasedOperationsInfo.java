@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DigitBasedOperationsInfo {
-    private Long digitNumber;
+    private Long numberOfDigits;
     private Long digitSum;
     private Long digitProduct;
 }
