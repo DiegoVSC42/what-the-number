@@ -7,10 +7,7 @@ public class AdvancedNumPropertiesService {
         for (int i = 0; i < numStr.length(); i++) {
             digit = digit + Integer.parseInt(String.valueOf(numStr.charAt(i)));
         }
-        if (number % digit == 0) {
-            return true;
-        }
-        return false;
+        return number % digit == 0;
     }
 
     public boolean calculatePalindrome(Long number) {
