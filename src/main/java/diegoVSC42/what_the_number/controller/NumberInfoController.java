@@ -16,6 +16,7 @@ public class NumberInfoController {
         diegoVSC42.what_the_number.domain.NumberInfo numberInfo = new diegoVSC42.what_the_number.domain.NumberInfo();
         numberInfo.calculateBNP(number);
         numberInfo.calculateSP(number);
+        numberInfo.calculateANP(number);
         return ResponseEntity.ok(numberInfo);
     }
 }

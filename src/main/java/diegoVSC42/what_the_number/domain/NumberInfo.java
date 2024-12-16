@@ -1,7 +1,9 @@
 package diegoVSC42.what_the_number.domain;
 
+import diegoVSC42.what_the_number.domain.properties.AdvancedNumPropertiesInfo;
 import diegoVSC42.what_the_number.domain.properties.BasicNumPropertiesInfo;
 import diegoVSC42.what_the_number.domain.properties.SequencePropertiesInfo;
+import diegoVSC42.what_the_number.service.AdvancedNumPropertiesService;
 import diegoVSC42.what_the_number.service.BasicNumPropertiesService;
 import diegoVSC42.what_the_number.service.SequencePropertiesService;
 import lombok.AllArgsConstructor;
@@ -19,6 +21,7 @@ public class NumberInfo {
     Long value;
     BasicNumPropertiesInfo basicNumPropertiesInfo;
     SequencePropertiesInfo sequencePropertiesInfo;
+    AdvancedNumPropertiesInfo advancedNumPropertiesInfo;
 
     public void calculateBNP(Long value){
         BasicNumPropertiesInfo properties = new BasicNumPropertiesInfo();
@@ -46,6 +49,16 @@ public class NumberInfo {
 
         this.value = value;
         this.sequencePropertiesInfo = properties;
+    }
+
+    public void calculateANP(Long value){
+        AdvancedNumPropertiesInfo properties = new AdvancedNumPropertiesInfo();
+        AdvancedNumPropertiesService advancedNumPropertiesService = new AdvancedNumPropertiesService();
+
+        properties.setHarshad(advancedNumPropertiesService.calculateHarshad(value));
+
+        this.value = value;
+        this.advancedNumPropertiesInfo = properties;
     }
 
 }
