@@ -12,4 +12,5 @@ import lombok.Setter;
 public class AdvancedNumPropertiesInfo {
     boolean isHarshad;
     boolean isPalindrome;
+    boolean isMersenne;
 }

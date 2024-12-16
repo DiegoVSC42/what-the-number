@@ -55,7 +55,10 @@ public class BasicNumPropertiesService {
         return sum.equals(number);
     }
 
-    public boolean isPrime(Long divisorsCount){
+    public boolean isPrime(Long number){
+        List<Long> divisors = new BasicNumPropertiesService().calculateDivisors(number);
+        Long divisorsCount = new BasicNumPropertiesService().calculateDivisorsCount(divisors);
+
         return divisorsCount == 2;
     }
 

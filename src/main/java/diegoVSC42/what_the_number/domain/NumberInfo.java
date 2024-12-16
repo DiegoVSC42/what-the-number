@@ -33,7 +33,7 @@ public class NumberInfo {
         properties.setFactorial(basicNumPropertiesService.calculateFactorial(value));
         properties.setPerfect(basicNumPropertiesService.isPerfect(value, properties.getDivisors()));
         properties.setParity(basicNumPropertiesService.calculateParity(value));
-        properties.setPrime(basicNumPropertiesService.isPrime(properties.getDivisorsCount()));
+        properties.setPrime(basicNumPropertiesService.isPrime(value));
 
         this.value = value;
         this.basicNumPropertiesInfo = properties;
@@ -57,6 +57,7 @@ public class NumberInfo {
 
         properties.setHarshad(advancedNumPropertiesService.calculateHarshad(value));
         properties.setPalindrome(advancedNumPropertiesService.calculatePalindrome(value));
+        properties.setMersenne(advancedNumPropertiesService.calculateMersennePrime(value));
 
         this.value = value;
         this.advancedNumPropertiesInfo = properties;

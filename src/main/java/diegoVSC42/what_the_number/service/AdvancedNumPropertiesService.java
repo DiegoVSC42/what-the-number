@@ -24,4 +24,19 @@ public class AdvancedNumPropertiesService {
 
         return number.equals(result);
     }
+
+    public boolean calculateMersennePrime(Long number){
+        BasicNumPropertiesService basicNumPropertiesService = new BasicNumPropertiesService();
+        if (basicNumPropertiesService.isPrime(number)){
+            long powerOfTwo = 2;
+            for(long i = 0; i < number;i++){
+                if((Math.pow(powerOfTwo,i) -1)== (number)){
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }
