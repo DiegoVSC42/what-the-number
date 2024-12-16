@@ -23,7 +23,7 @@ public class NumberInfo {
     SequencePropertiesInfo sequencePropertiesInfo;
     AdvancedNumPropertiesInfo advancedNumPropertiesInfo;
 
-    public void calculateBNP(Long value){
+    public void calculateBNP(Long value) {
         BasicNumPropertiesInfo properties = new BasicNumPropertiesInfo();
         BasicNumPropertiesService basicNumPropertiesService = new BasicNumPropertiesService();
 
@@ -39,7 +39,7 @@ public class NumberInfo {
         this.basicNumPropertiesInfo = properties;
     }
 
-    public void calculateSP(Long value){
+    public void calculateSP(Long value) {
         SequencePropertiesInfo properties = new SequencePropertiesInfo();
         SequencePropertiesService sequencePropertiesService = new SequencePropertiesService();
 
@@ -51,11 +51,12 @@ public class NumberInfo {
         this.sequencePropertiesInfo = properties;
     }
 
-    public void calculateANP(Long value){
+    public void calculateANP(Long value) {
         AdvancedNumPropertiesInfo properties = new AdvancedNumPropertiesInfo();
         AdvancedNumPropertiesService advancedNumPropertiesService = new AdvancedNumPropertiesService();
 
         properties.setHarshad(advancedNumPropertiesService.calculateHarshad(value));
+        properties.setPalindrome(advancedNumPropertiesService.calculatePalindrome(value));
 
         this.value = value;
         this.advancedNumPropertiesInfo = properties;
