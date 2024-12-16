@@ -12,4 +12,18 @@ public class AdvancedNumPropertiesService {
         }
         return false;
     }
+
+    public boolean calculatePalindrome(Long number){
+        Long numberAux = number;
+        long result = 0L;
+        long digit;
+
+        while(numberAux > 0){
+            digit = numberAux % 10;
+            result = result * 10 + digit;
+            numberAux /= 10;
+        }
+
+        return number.equals(result);
+    }
 }

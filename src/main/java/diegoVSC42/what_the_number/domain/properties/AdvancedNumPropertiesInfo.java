@@ -11,4 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AdvancedNumPropertiesInfo {
     boolean isHarshad;
+    boolean isPalindrome;
 }
