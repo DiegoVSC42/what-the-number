@@ -14,10 +14,11 @@ public class NumberInfoController {
     @GetMapping("/{number}")
     public ResponseEntity<NumberInfo> getNumberInfo(@PathVariable("number") Long number) {
         diegoVSC42.what_the_number.domain.NumberInfo numberInfo = new diegoVSC42.what_the_number.domain.NumberInfo();
-        numberInfo.calculateBNP(number);
-        numberInfo.calculateSP(number);
-        numberInfo.calculateANP(number);
-        numberInfo.calculateDBO(number);
+        numberInfo.calculateBasicNumberProperties(number);
+        numberInfo.calculateSequencesProperties(number);
+        numberInfo.calculateAdvancedNumberProperties(number);
+        numberInfo.calculateDigitBasedOperations(number);
+        numberInfo.calculateAlternativeRepresentations(number);
         return ResponseEntity.ok(numberInfo);
     }
 }

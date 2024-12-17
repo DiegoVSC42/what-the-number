@@ -1,13 +1,7 @@
 package diegoVSC42.what_the_number.domain;
 
-import diegoVSC42.what_the_number.domain.properties.AdvancedNumPropertiesInfo;
-import diegoVSC42.what_the_number.domain.properties.BasicNumPropertiesInfo;
-import diegoVSC42.what_the_number.domain.properties.DigitBasedOperationsInfo;
-import diegoVSC42.what_the_number.domain.properties.SequencePropertiesInfo;
-import diegoVSC42.what_the_number.service.AdvancedNumPropertiesService;
-import diegoVSC42.what_the_number.service.BasicNumPropertiesService;
-import diegoVSC42.what_the_number.service.DigitBasedOperationsService;
-import diegoVSC42.what_the_number.service.SequencePropertiesService;
+import diegoVSC42.what_the_number.domain.properties.*;
+import diegoVSC42.what_the_number.service.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,8 +19,9 @@ public class NumberInfo {
     SequencePropertiesInfo sequencePropertiesInfo;
     AdvancedNumPropertiesInfo advancedNumPropertiesInfo;
     DigitBasedOperationsInfo digitBasedOperationsInfo;
+    AlternativeRepresentationsInfo alternativeRepresentationsInfo;
 
-    public void calculateBNP(Long value) {
+    public void calculateBasicNumberProperties(Long value) {
         BasicNumPropertiesInfo properties = new BasicNumPropertiesInfo();
         BasicNumPropertiesService basicNumPropertiesService = new BasicNumPropertiesService();
 
@@ -42,7 +37,7 @@ public class NumberInfo {
         this.basicNumPropertiesInfo = properties;
     }
 
-    public void calculateSP(Long value) {
+    public void calculateSequencesProperties(Long value) {
         SequencePropertiesInfo properties = new SequencePropertiesInfo();
         SequencePropertiesService sequencePropertiesService = new SequencePropertiesService();
 
@@ -54,7 +49,7 @@ public class NumberInfo {
         this.sequencePropertiesInfo = properties;
     }
 
-    public void calculateANP(Long value) {
+    public void calculateAdvancedNumberProperties(Long value) {
         AdvancedNumPropertiesInfo properties = new AdvancedNumPropertiesInfo();
         AdvancedNumPropertiesService advancedNumPropertiesService = new AdvancedNumPropertiesService();
 
@@ -66,7 +61,7 @@ public class NumberInfo {
         this.advancedNumPropertiesInfo = properties;
     }
 
-    public void calculateDBO(Long value) {
+    public void calculateDigitBasedOperations(Long value) {
         DigitBasedOperationsInfo properties = new DigitBasedOperationsInfo();
         DigitBasedOperationsService digitBasedOperationsService = new DigitBasedOperationsService();
 
@@ -76,4 +71,15 @@ public class NumberInfo {
         this.value = value;
         this.digitBasedOperationsInfo = properties;
     }
+
+    public void calculateAlternativeRepresentations(Long value) {
+        AlternativeRepresentationsInfo properties = new AlternativeRepresentationsInfo();
+        AlternativeRepresentationsService alternativeRepresentationsService = new AlternativeRepresentationsService();
+
+        properties.setBinary(alternativeRepresentationsService.calculateBinary(value));
+
+        this.value = value;
+        this.alternativeRepresentationsInfo = properties;
+    }
+
 }
