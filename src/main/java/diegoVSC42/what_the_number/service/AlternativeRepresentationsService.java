@@ -43,4 +43,16 @@ public class AlternativeRepresentationsService {
         return String.valueOf(value);
 
     }
+
+    public String calculateOctal(Long number) {
+        StringBuilder octal = new StringBuilder();
+        long digit;
+        while (number >= 8) {
+            digit = number % 8;
+            number = number / 8;
+            octal.append(digit);
+        }
+        octal.append(number);
+        return octal.reverse().toString();
+    }
 }

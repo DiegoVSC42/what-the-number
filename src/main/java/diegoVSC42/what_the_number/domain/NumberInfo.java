@@ -78,6 +78,7 @@ public class NumberInfo {
 
         properties.setBinary(alternativeRepresentationsService.calculateBinary(value));
         properties.setHexadecimal(alternativeRepresentationsService.calculateHexadecimal(value));
+        properties.setOctal(alternativeRepresentationsService.calculateOctal(value));
         this.value = value;
         this.alternativeRepresentationsInfo = properties;
     }

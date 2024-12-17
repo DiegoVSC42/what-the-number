@@ -12,4 +12,5 @@ import lombok.Setter;
 public class AlternativeRepresentationsInfo {
     private String binary;
     private String hexadecimal;
+    private String octal;
 }
