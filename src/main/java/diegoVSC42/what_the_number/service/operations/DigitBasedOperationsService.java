@@ -1,4 +1,4 @@
-package diegoVSC42.what_the_number.service;
+package diegoVSC42.what_the_number.service.operations;
 
 public class DigitBasedOperationsService {
 

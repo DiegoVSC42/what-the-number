@@ -1,4 +1,4 @@
-package diegoVSC42.what_the_number.domain.properties;
+package diegoVSC42.what_the_number.domain.representations;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

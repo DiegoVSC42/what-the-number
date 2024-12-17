@@ -1,7 +1,13 @@
 package diegoVSC42.what_the_number.domain;
 
+import diegoVSC42.what_the_number.domain.operations.DigitBasedOperationsInfo;
 import diegoVSC42.what_the_number.domain.properties.*;
-import diegoVSC42.what_the_number.service.*;
+import diegoVSC42.what_the_number.domain.representations.AlternativeRepresentationsInfo;
+import diegoVSC42.what_the_number.service.operations.DigitBasedOperationsService;
+import diegoVSC42.what_the_number.service.properties.AdvancedNumPropertiesService;
+import diegoVSC42.what_the_number.service.properties.BasicNumPropertiesService;
+import diegoVSC42.what_the_number.service.properties.SequencePropertiesService;
+import diegoVSC42.what_the_number.service.representations.AlternativeRepresentationsService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

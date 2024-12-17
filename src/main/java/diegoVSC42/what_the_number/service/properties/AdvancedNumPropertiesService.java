@@ -1,4 +1,4 @@
-package diegoVSC42.what_the_number.service;
+package diegoVSC42.what_the_number.service.properties;
 
 public class AdvancedNumPropertiesService {
     public boolean calculateHarshad(Long number) {

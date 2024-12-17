@@ -1,4 +1,4 @@
-package diegoVSC42.what_the_number.service;
+package diegoVSC42.what_the_number.service.properties;
 
 import diegoVSC42.what_the_number.domain.Parity;
 import org.springframework.stereotype.Service;
