@@ -11,4 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AlternativeRepresentationsInfo {
     private String binary;
+    private String hexadecimal;
 }

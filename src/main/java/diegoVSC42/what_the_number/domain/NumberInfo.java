@@ -77,7 +77,7 @@ public class NumberInfo {
         AlternativeRepresentationsService alternativeRepresentationsService = new AlternativeRepresentationsService();
 
         properties.setBinary(alternativeRepresentationsService.calculateBinary(value));
-
+        properties.setHexadecimal(alternativeRepresentationsService.calculateHexadecimal(value));
         this.value = value;
         this.alternativeRepresentationsInfo = properties;
     }
