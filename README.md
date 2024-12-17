@@ -55,12 +55,18 @@ http://localhost:8080/number-info/{number}
 
 Replace `{number}` with any desired integer.
 
+Alternatively, you can access the hosted version of the application online:
+
+```
+https://what-the-number.up.railway.app/number-info/{number}
+```
+
 ### Example
 
 Request:
 
 ```http
-GET http://localhost:8080/number-info/27
+GET https://what-the-number-production.up.railway.app/number-info/27
 ```
 
 ---
@@ -131,4 +137,3 @@ You can directly download the `.jar` file from the following link:
 ➡ [what-the-number-0.0.1-SNAPSHOT.jar](https://github.com/DiegoVSC42/what-the-number/blob/main/target/what-the-number-0.0.1-SNAPSHOT.jar)
 
 ---
-
