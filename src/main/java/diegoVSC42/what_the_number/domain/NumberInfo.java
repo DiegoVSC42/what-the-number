@@ -1,9 +1,11 @@
 package diegoVSC42.what_the_number.domain;
 
 import diegoVSC42.what_the_number.domain.operations.DigitBasedOperationsInfo;
+import diegoVSC42.what_the_number.domain.operations.OtherMathematicalOperationsInfo;
 import diegoVSC42.what_the_number.domain.properties.*;
 import diegoVSC42.what_the_number.domain.representations.AlternativeRepresentationsInfo;
 import diegoVSC42.what_the_number.service.operations.DigitBasedOperationsService;
+import diegoVSC42.what_the_number.service.operations.OtherMathematicalOperationsService;
 import diegoVSC42.what_the_number.service.properties.AdvancedNumPropertiesService;
 import diegoVSC42.what_the_number.service.properties.BasicNumPropertiesService;
 import diegoVSC42.what_the_number.service.properties.SequencePropertiesService;
@@ -26,6 +28,7 @@ public class NumberInfo {
     AdvancedNumPropertiesInfo advancedNumPropertiesInfo;
     DigitBasedOperationsInfo digitBasedOperationsInfo;
     AlternativeRepresentationsInfo alternativeRepresentationsInfo;
+    OtherMathematicalOperationsInfo otherMathematicalOperationsInfo;
 
     public void calculateBasicNumberProperties(Long value) {
         BasicNumPropertiesInfo properties = new BasicNumPropertiesInfo();
@@ -85,8 +88,22 @@ public class NumberInfo {
         properties.setBinary(alternativeRepresentationsService.calculateBinary(value));
         properties.setHexadecimal(alternativeRepresentationsService.calculateHexadecimal(value));
         properties.setOctal(alternativeRepresentationsService.calculateOctal(value));
+
         this.value = value;
         this.alternativeRepresentationsInfo = properties;
+    }
+
+    public void calculateOtherMathematicalOperations(Long value) {
+        OtherMathematicalOperationsInfo properties = new OtherMathematicalOperationsInfo();
+        OtherMathematicalOperationsService otherMathematicalOperationsService = new OtherMathematicalOperationsService();
+
+        properties.setSquareRoot(otherMathematicalOperationsService.CalculateSquareRoot(value));
+        properties.setCubeRoot(otherMathematicalOperationsService.CalculateCubeRoot(value));
+        properties.setNaturalLogarithm(otherMathematicalOperationsService.CalculateNaturalLogarithm(value));
+        properties.setLogarithmBaseTen(otherMathematicalOperationsService.CalculateLogarithmBaseTen(value));
+
+        this.value = value;
+        this.otherMathematicalOperationsInfo = properties;
     }
 
 }

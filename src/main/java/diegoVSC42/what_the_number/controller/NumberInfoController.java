@@ -19,6 +19,7 @@ public class NumberInfoController {
         numberInfo.calculateAdvancedNumberProperties(number);
         numberInfo.calculateDigitBasedOperations(number);
         numberInfo.calculateAlternativeRepresentations(number);
+        numberInfo.calculateOtherMathematicalOperations(number);
         return ResponseEntity.ok(numberInfo);
     }
 }
