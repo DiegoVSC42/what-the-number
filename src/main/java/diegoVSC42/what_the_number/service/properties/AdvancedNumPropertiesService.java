@@ -7,7 +7,10 @@ public class AdvancedNumPropertiesService {
         for (int i = 0; i < numStr.length(); i++) {
             digit = digit + Integer.parseInt(String.valueOf(numStr.charAt(i)));
         }
-        return number % digit == 0;
+        if (number > 0) {
+            return number % digit == 0;
+        }
+        return false;
     }
 
     public boolean calculatePalindrome(Long number) {
@@ -21,22 +24,24 @@ public class AdvancedNumPropertiesService {
             numberAux /= 10;
 
         }
-
+        if (number == 0) {
+            return true;
+        }
         return number.equals(result);
     }
 
-    public boolean calculateMersennePrime(Long number){
+    public boolean calculateMersennePrime(Long number) {
         BasicNumPropertiesService basicNumPropertiesService = new BasicNumPropertiesService();
-        if (basicNumPropertiesService.isPrime(number)){
+        if (basicNumPropertiesService.isPrime(number)) {
             long powerOfTwo = 2;
-            for(long i = 0; i < number;i++){
-                if((Math.pow(powerOfTwo,i) -1)== (number)){
+            for (long i = 0; i < number; i++) {
+                if ((Math.pow(powerOfTwo, i) - 1) == (number)) {
 
                     return true;
                 }
             }
         }
 
-        return false;
+        return number == 0;
     }
 }
