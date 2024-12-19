@@ -36,11 +36,11 @@ public class NumberInfo {
 
         properties.setDivisors(basicNumPropertiesService.calculateDivisors(value));
         properties.setDivisorsCount(basicNumPropertiesService.calculateDivisorsCount(properties.getDivisors()));
-        properties.setTenFirstMultiples(basicNumPropertiesService.calculateMultiples(value));
-        properties.setFactorial(basicNumPropertiesService.calculateFactorial(value));
-        properties.setPerfect(basicNumPropertiesService.isPerfect(value, properties.getDivisors()));
-        properties.setParity(basicNumPropertiesService.calculateParity(value));
-        properties.setPrime(basicNumPropertiesService.isPrime(value));
+//        properties.setTenFirstMultiples(basicNumPropertiesService.calculateMultiples(value));
+//        properties.setFactorial(basicNumPropertiesService.calculateFactorial(value));
+//        properties.setPerfect(basicNumPropertiesService.isPerfect(value, properties.getDivisors()));
+//        properties.setParity(basicNumPropertiesService.calculateParity(value));
+//        properties.setPrime(basicNumPropertiesService.isPrime(value));
 
         this.value = value;
         this.basicNumPropertiesInfo = properties;

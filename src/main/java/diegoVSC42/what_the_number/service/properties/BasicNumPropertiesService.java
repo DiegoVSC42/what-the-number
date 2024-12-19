@@ -4,6 +4,7 @@ import diegoVSC42.what_the_number.domain.Parity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -11,11 +12,17 @@ public class BasicNumPropertiesService {
 
     public  List<Long> calculateDivisors(Long number){
         List<Long> divisors = new ArrayList<>();
-        for(int i = 1; i <= number;i++){
-            if(number % i == 0){
-                divisors.add((long) i);
+        long sqrt = (long) Math.sqrt(number);
+
+        for (long i = 1; i <= sqrt; i++) {
+            if (number % i == 0) {
+                divisors.add(i);
+                if (i != number / i) {
+                    divisors.add(number / i);
+                }
             }
         }
+        Collections.sort(divisors);
         return divisors;
     }
 

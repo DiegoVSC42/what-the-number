@@ -14,7 +14,6 @@ public class NumberInfoService {
         numberInfo.calculateDigitBasedOperations(number);
         numberInfo.calculateAlternativeRepresentations(number);
         numberInfo.calculateOtherMathematicalOperations(number);
-        System.out.println(Long.MAX_VALUE);
         return numberInfo;
     }
 }
