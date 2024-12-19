@@ -37,6 +37,9 @@ public class BasicNumPropertiesService {
     }
 
     public Long calculateFactorial(Long number){
+        if(number > 20){
+            return null;
+        }
         if (number == 0){
             return 1L;
         }
