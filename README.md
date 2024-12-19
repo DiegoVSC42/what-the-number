@@ -53,7 +53,7 @@ Once the application is running, you can interact with the API by sending an **H
 http://localhost:8080/number-info/{number}
 ```
 
-Replace `{number}` with any desired integer.
+Replace `{number}` with any desired positive integer.
 
 Alternatively, you can access the hosted version of the application online:
 
@@ -66,7 +66,7 @@ https://what-the-number.up.railway.app/number-info/{number}
 Request:
 
 ```http
-GET https://what-the-number-production.up.railway.app/number-info/27
+GET https://what-the-number.up.railway.app/number-info/27
 ```
 
 ---
