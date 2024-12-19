@@ -25,6 +25,9 @@ public class BasicNumPropertiesService {
 
     public List<Long> calculateMultiples(Long number){
         List<Long> multiples = new ArrayList<>();
+        if(number == 0L){
+            return multiples;
+        }
         for(Long i = number; multiples.size() < 10; i += number){
             if(i % number == 0){
                 multiples.add(i);
@@ -34,6 +37,9 @@ public class BasicNumPropertiesService {
     }
 
     public Long calculateFactorial(Long number){
+        if (number == 0){
+            return 1L;
+        }
         Long factorial = number;
         for(long i = number-1; i > 1 ; i--){
             factorial = factorial * i;
@@ -50,6 +56,9 @@ public class BasicNumPropertiesService {
     }
 
     public boolean isPerfect(Long number, List<Long> divisors ){
+        if(number == 0){
+            return false;
+        }
         var sum = divisors.stream().reduce(0L,Long::sum);
         sum = sum - number;
         return sum.equals(number);
