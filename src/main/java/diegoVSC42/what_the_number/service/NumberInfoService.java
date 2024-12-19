@@ -1,7 +1,6 @@
 package diegoVSC42.what_the_number.service;
 
 import diegoVSC42.what_the_number.domain.NumberInfo;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
