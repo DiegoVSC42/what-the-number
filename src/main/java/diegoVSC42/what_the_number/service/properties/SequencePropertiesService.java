@@ -13,24 +13,24 @@ public class SequencePropertiesService {
         Long position = null;
         boolean isInFibonacci = false;
 
-        long f1 = 0;
-        long f2 = 1;
-        long fn = 0;
+        long previousTerm = 0;
+        long actualTerm = 1;
+        long nextTerm;
 
         if (number > 3) {
             for (long i = 1; i <= number; i++) {
-                fn = f1 + f2;
-                f2 = f1;
-                f1 = fn;
+                nextTerm = previousTerm + actualTerm;
+                actualTerm = previousTerm;
+                previousTerm = nextTerm;
 
                 if(i == number){
-                    nthFibonacciTerm = fn;
+                    nthFibonacciTerm = nextTerm;
                 }
 
-                if (fn == number) {
+                if (nextTerm == number) {
                     isInFibonacci = true;
                     position = i;
-                    nthFibonacciTerm = fn;
+                    nthFibonacciTerm = nextTerm;
                 }
             }
         } else {
