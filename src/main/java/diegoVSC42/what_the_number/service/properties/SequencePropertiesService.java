@@ -23,7 +23,7 @@ public class SequencePropertiesService {
                 actualTerm = previousTerm;
                 previousTerm = nextTerm;
 
-                if(i == number){
+                if (i == number) {
                     nthFibonacciTerm = nextTerm;
                 }
 
@@ -35,9 +35,9 @@ public class SequencePropertiesService {
             }
         } else {
             isInFibonacci = true;
-            position = number+1;
-            if(number != 0){
-                nthFibonacciTerm = number-1;
+            position = number + 1;
+            if (number != 0) {
+                nthFibonacciTerm = number - 1;
             }
         }
 
@@ -46,26 +46,27 @@ public class SequencePropertiesService {
 
     public TriangularSequence calculateTriangularSequence(Long number) {
 
-        long nthTriangularTerm = (number * (number + 1)) / 2;
+        Long nthTriangularTerm = null;
         Long position = null;
         boolean isInTriangular = false;
 
         long triangularFactor;
-
-        for (long i = 1; i <= number; i++) {
-            triangularFactor = (i * (i + 1)) / 2;
-            if (triangularFactor == number) {
-                isInTriangular = true;
-                position = i;
+        if (number != 0) {
+            nthTriangularTerm = (number * (number + 1)) / 2;
+            for (long i = 1; i <= number; i++) {
+                triangularFactor = (i * (i + 1)) / 2;
+                if (triangularFactor == number) {
+                    isInTriangular = true;
+                    position = i;
+                }
             }
         }
-
         return new TriangularSequence(nthTriangularTerm, position, isInTriangular);
 
     }
 
     public SquareSequence calculateSquareSequence(Long number) {
-        long nthSquareTerm = number * number;
+        Long nthSquareTerm = null;
         Long position = null;
         boolean isInSquare = false;
 
@@ -78,9 +79,12 @@ public class SequencePropertiesService {
                 }
             }
         } else {
-            position = number;
-            isInSquare = true;
+            if (number != 0) {
+                position = number;
+                isInSquare = true;
+            }
         }
+
         return new SquareSequence(nthSquareTerm, position, isInSquare);
 
     }

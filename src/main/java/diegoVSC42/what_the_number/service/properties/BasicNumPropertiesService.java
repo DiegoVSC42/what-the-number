@@ -40,7 +40,7 @@ public class BasicNumPropertiesService {
         if (number == 0){
             return 1L;
         }
-        Long factorial = number;
+        long factorial = number;
         for(long i = number-1; i > 1 ; i--){
             factorial = factorial * i;
         }

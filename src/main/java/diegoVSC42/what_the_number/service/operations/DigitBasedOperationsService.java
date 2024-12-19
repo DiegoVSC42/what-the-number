@@ -23,6 +23,6 @@ public class DigitBasedOperationsService {
             counter = counter * digit;
             number /= 10;
         }
-        return counter;
+        return number == 0 ? 0 : counter;
     }
 }
