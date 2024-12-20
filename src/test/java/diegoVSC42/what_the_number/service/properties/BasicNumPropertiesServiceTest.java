@@ -75,23 +75,60 @@ class BasicNumPropertiesServiceTest {
         Long number = Long.MAX_VALUE/9;
         //Act
         List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
-        //Asser
+        //Assert
         assertThat(multiples).isEmpty();
     }
 
     @Test
-    void calculateFactorial() {
+    @DisplayName("Should return the result of the factorial calculation for a regular number")
+    void calculateFactorialTest1() {
+        //Arrange
+        Long number = 12L;
+        Long expectedResult =  479001600L;
+        //Act
+        Long result = basicNumPropertiesService.calculateFactorial(number);
+        //Assert
+        assertThat(result).isEqualTo(expectedResult);
+    }
+    @Test
+    @DisplayName("Should return null for a number bigger than 20")
+    void calculateFactorialTest2() {
+        //Arrange
+        Long number = 42L;
+        //Act
+        Long result = basicNumPropertiesService.calculateFactorial(number);
+        //Assert
+        assertThat(result).isEqualTo(null);
+    }
+    @Test
+    @DisplayName("Should return one for number zero")
+    void calculateFactorialTest3() {
+        //Arrange
+        Long number = 0L;
+        //Act
+        Long result = basicNumPropertiesService.calculateFactorial(number);
+        //Assert
+        assertThat(result).isEqualTo(1L);
     }
 
     @Test
-    void calculateParity() {
+    @DisplayName("Should return true for a prime number")
+    void isPrimeTest1() {
+        //Arrange
+        Long number = 13L;
+        //Act
+        boolean result = basicNumPropertiesService.isPrime(number);
+        assertThat(result).isTrue();
+    }
+    @Test
+    @DisplayName("Should return false for number zero")
+    void isPrimeTest2() {
+        //Arrange
+        Long number = 0L;
+        //Act
+        boolean result = basicNumPropertiesService.isPrime(number);
+        assertThat(result).isFalse();
     }
 
-    @Test
-    void isPerfect() {
-    }
 
-    @Test
-    void isPrime() {
-    }
 }
