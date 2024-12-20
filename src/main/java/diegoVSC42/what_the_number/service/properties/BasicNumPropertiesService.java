@@ -32,7 +32,7 @@ public class BasicNumPropertiesService {
 
     public List<Long> calculateMultiples(Long number){
         List<Long> multiples = new ArrayList<>();
-        if(number == 0L){
+        if(number == 0L || number > Long.MAX_VALUE/10){
             return multiples;
         }
         for(Long i = number; multiples.size() < 10; i += number){
@@ -56,7 +56,14 @@ public class BasicNumPropertiesService {
         }
         return factorial;
     }
-
+    public boolean isPerfect(Long number, List<Long> divisors ){
+        if(number == 0 || divisors.isEmpty()){
+            return false;
+        }
+        var sum = divisors.stream().reduce(0L,Long::sum);
+        sum = sum - number;
+        return sum.equals(number);
+    }
     public Parity calculateParity(Long number){
         if(number % 2 == 0){
             return Parity.EVEN;
@@ -64,21 +71,16 @@ public class BasicNumPropertiesService {
             return Parity.ODD;
         }
     }
-
-    public boolean isPerfect(Long number, List<Long> divisors ){
-        if(number == 0){
+    public boolean isPrime(Long number){
+        if(number <= 1){
             return false;
         }
-        var sum = divisors.stream().reduce(0L,Long::sum);
-        sum = sum - number;
-        return sum.equals(number);
-    }
-
-    public boolean isPrime(Long number){
-        List<Long> divisors = new BasicNumPropertiesService().calculateDivisors(number);
-        Long divisorsCount = new BasicNumPropertiesService().calculateDivisorsCount(divisors);
-
-        return divisorsCount == 2;
+        for(long i = 2; i <= Math.sqrt(number); i++){
+            if(number % i == 0){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
