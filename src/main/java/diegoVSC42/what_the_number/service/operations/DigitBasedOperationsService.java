@@ -15,14 +15,21 @@ public class DigitBasedOperationsService {
         }
         return counter;
     }
-    public Long calculateDigitProduct(Long number){
+    public Long calculateDigitProduct(Long number) {
+
+        if (number == 0) {
+            return 0L;
+        }
+
         long counter = 1L;
         long digit;
+
         while (number > 0) {
             digit = number % 10;
             counter = counter * digit;
             number /= 10;
         }
-        return number == 0 ? 0 : counter;
+
+        return counter;
     }
 }
