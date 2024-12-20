@@ -27,7 +27,6 @@ class BasicNumPropertiesServiceTest {
         //Assert
         assertThat(divisors).isEqualTo(expectedDivisors);
     }
-
     @Test
     @DisplayName("Should return only two divisors of a prime number")
     void calculateDivisorsTest2() {
@@ -38,7 +37,6 @@ class BasicNumPropertiesServiceTest {
         //Assert
         assertThat(divisors.size()).isEqualTo(2);
     }
-
     @Test
     @DisplayName("Should return a empty list for number 0")
     void calculateDivisorsTest3(){
@@ -50,10 +48,35 @@ class BasicNumPropertiesServiceTest {
         assertThat(divisors).isEmpty();
     }
 
-
-
     @Test
-    void calculateMultiples() {
+    @DisplayName("Should return a list with ten elements for a regular number")
+    void calculateMultiplesTest1() {
+        //Arrange
+        Long number = 42L;
+        //Act
+        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        //Asser
+        assertThat(multiples.size()).isEqualTo(10);
+    }
+    @Test
+    @DisplayName("Should return a empty list for number zero")
+    void calculateMultiplesTest2() {
+        //Arrange
+        Long number = 0L;
+        //Act
+        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        //Asser
+        assertThat(multiples).isEmpty();
+    }
+    @Test
+    @DisplayName("Should return a empty list for a big number")
+    void calculateMultiplesTest3() {
+        //Arrange
+        Long number = Long.MAX_VALUE/9;
+        //Act
+        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        //Asser
+        assertThat(multiples).isEmpty();
     }
 
     @Test
