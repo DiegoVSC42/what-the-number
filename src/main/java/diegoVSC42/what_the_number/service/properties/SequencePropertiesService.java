@@ -17,7 +17,8 @@ public class SequencePropertiesService {
         long actualTerm = 1;
         long nextTerm;
 
-        if (number > 3) {
+        //OBS.: 92 is the biggest term that Long can calculate
+        if (number > 3 && number < 93) {
             for (long i = 1; i <= number; i++) {
                 nextTerm = previousTerm + actualTerm;
                 actualTerm = previousTerm;
@@ -33,7 +34,7 @@ public class SequencePropertiesService {
                     nthFibonacciTerm = nextTerm;
                 }
             }
-        } else {
+        } else if(number < 3){
             isInFibonacci = true;
             position = number + 1;
             if (number != 0) {
@@ -51,13 +52,14 @@ public class SequencePropertiesService {
         boolean isInTriangular = false;
 
         long triangularFactor;
-        if (number != 0) {
+        if (number != 0 && number < Math.sqrt(Long.MAX_VALUE)) {
             nthTriangularTerm = (number * (number + 1)) / 2;
-            for (long i = 1; i <= number; i++) {
+            for (long i = 1; i <= (2*nthTriangularTerm)/(i+1); i++) {
                 triangularFactor = (i * (i + 1)) / 2;
                 if (triangularFactor == number) {
                     isInTriangular = true;
                     position = i;
+                    break;
                 }
             }
         }
@@ -70,18 +72,20 @@ public class SequencePropertiesService {
         Long position = null;
         boolean isInSquare = false;
 
-        if (number > 1) {
-            for (long i = 0; i <= number / 2; i++) {
-                long square = (i * i);
-                if (square == number) {
-                    isInSquare = true;
-                    position = i;
+        if(number < Math.sqrt(Long.MAX_VALUE)) {
+            if (number > 1) {
+                for (long i = 0; i <= number / 2; i++) {
+                    long square = (i * i);
+                    if (square == number) {
+                        isInSquare = true;
+                        position = i;
+                    }
                 }
-            }
-        } else {
-            if (number != 0) {
-                position = number;
-                isInSquare = true;
+            } else {
+                if (number != 0) {
+                    position = number;
+                    isInSquare = true;
+                }
             }
         }
 
