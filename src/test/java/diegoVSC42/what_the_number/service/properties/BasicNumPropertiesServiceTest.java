@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +40,17 @@ class BasicNumPropertiesServiceTest {
     }
 
     @Test
-    void calculateDivisorsCount() {
+    @DisplayName("Should return a empty list for number 0")
+    void calculateDivisorsTest3(){
+        //Arrange
+        Long number = 0L;
+        //Act
+        List<Long> divisors = basicNumPropertiesService.calculateDivisors(number);
+        //Assert
+        assertThat(divisors).isEmpty();
     }
+
+
 
     @Test
     void calculateMultiples() {
