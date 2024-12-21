@@ -12,13 +12,14 @@ public class BasicNumPropertiesService {
 
     public  List<Long> calculateDivisors(Long number){
         List<Long> divisors = new ArrayList<>();
-        long sqrt = (long) Math.sqrt(number);
+        long squareRoot = (long) Math.sqrt(number);
 
-        for (long i = 1; i <= sqrt; i++) {
+        for (long i = 1; i <= squareRoot; i++) {
             if (number % i == 0) {
                 divisors.add(i);
-                if (i != number / i) {
-                    divisors.add(number / i);
+                long currentDivisor = number / i;
+                if (i != currentDivisor) {
+                    divisors.add(currentDivisor);
                 }
             }
         }

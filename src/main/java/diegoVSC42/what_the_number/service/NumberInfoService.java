@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class NumberInfoService {
     public NumberInfo calculations(Long number) {
+
         NumberInfo numberInfo = new NumberInfo();
         numberInfo.calculateBasicNumberProperties(number);
         numberInfo.calculateSequencesProperties(number);
