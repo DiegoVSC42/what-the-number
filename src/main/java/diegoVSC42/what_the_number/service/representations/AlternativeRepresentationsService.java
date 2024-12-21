@@ -1,8 +1,11 @@
 package diegoVSC42.what_the_number.service.representations;
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class AlternativeRepresentationsService {
     public String calculateBinary(Long number) {
         StringBuilder binary = new StringBuilder();
