@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: diegoVSC42.what_the_number.service.properties.SequencePropertiesServiceTest
+-------------------------------------------------------------------------------
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in diegoVSC42.what_the_number.service.properties.SequencePropertiesServiceTest

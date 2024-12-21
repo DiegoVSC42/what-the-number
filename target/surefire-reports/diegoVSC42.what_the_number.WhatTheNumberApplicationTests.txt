@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: diegoVSC42.what_the_number.WhatTheNumberApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.323 s -- in diegoVSC42.what_the_number.WhatTheNumberApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in diegoVSC42.what_the_number.WhatTheNumberApplicationTests
