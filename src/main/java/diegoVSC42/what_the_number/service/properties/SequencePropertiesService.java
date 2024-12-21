@@ -87,6 +87,10 @@ public class SequencePropertiesService {
                     isInSquare = true;
                 }
             }
+            nthSquareTerm = number*number;
+            if(number == 0){
+                nthSquareTerm = null;
+            }
         }
 
         return new SquareSequence(nthSquareTerm, position, isInSquare);

@@ -17,18 +17,19 @@ class BasicNumPropertiesServiceTest {
     private BasicNumPropertiesService basicNumPropertiesService;
 
     @Test
-    @DisplayName("Should return all divisors of a number with multiple divisors")
+    @DisplayName("Returns all divisors of a number with multiple divisors")
     void calculateDivisorsTest1() {
         //Arrange
         Long number = 42L;
-        List<Long> expectedDivisors = new ArrayList<>(List.of(1L,2L,3L,6L,7L,14L,21L,42L));
+        List<Long> expectedDivisors = new ArrayList<>(List.of(1L, 2L, 3L, 6L, 7L, 14L, 21L, 42L));
         //Act
         List<Long> divisors = basicNumPropertiesService.calculateDivisors(number);
         //Assert
         assertThat(divisors).isEqualTo(expectedDivisors);
     }
+
     @Test
-    @DisplayName("Should return only two divisors of a prime number")
+    @DisplayName("Returns only two divisors for a prime number")
     void calculateDivisorsTest2() {
         //Arrange
         Long number = 137L;
@@ -37,9 +38,10 @@ class BasicNumPropertiesServiceTest {
         //Assert
         assertThat(divisors.size()).isEqualTo(2);
     }
+
     @Test
-    @DisplayName("Should return a empty list for number 0")
-    void calculateDivisorsTest3(){
+    @DisplayName("Returns an empty list for divisors of zero")
+    void calculateDivisorsTest3() {
         //Arrange
         Long number = 0L;
         //Act
@@ -49,30 +51,21 @@ class BasicNumPropertiesServiceTest {
     }
 
     @Test
-    @DisplayName("Should return a list with ten elements for a regular number")
+    @DisplayName("Returns a list of 10 multiples for a regular number")
     void calculateMultiplesTest1() {
         //Arrange
         Long number = 42L;
         //Act
         List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
-        //Asser
+        //Assert
         assertThat(multiples.size()).isEqualTo(10);
     }
+
     @Test
-    @DisplayName("Should return a empty list for number zero")
+    @DisplayName("Returns an empty list for multiples of zero")
     void calculateMultiplesTest2() {
         //Arrange
         Long number = 0L;
-        //Act
-        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
-        //Asser
-        assertThat(multiples).isEmpty();
-    }
-    @Test
-    @DisplayName("Should return a empty list for a big number")
-    void calculateMultiplesTest3() {
-        //Arrange
-        Long number = Long.MAX_VALUE/9;
         //Act
         List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
         //Assert
@@ -80,18 +73,30 @@ class BasicNumPropertiesServiceTest {
     }
 
     @Test
-    @DisplayName("Should return the result of the factorial calculation for a regular number")
+    @DisplayName("Returns an empty list for multiples of a very large number")
+    void calculateMultiplesTest3() {
+        //Arrange
+        Long number = Long.MAX_VALUE / 9;
+        //Act
+        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        //Assert
+        assertThat(multiples).isEmpty();
+    }
+
+    @Test
+    @DisplayName("Calculates the factorial of a regular number")
     void calculateFactorialTest1() {
         //Arrange
         Long number = 12L;
-        Long expectedResult =  479001600L;
+        Long expectedResult = 479001600L;
         //Act
         Long result = basicNumPropertiesService.calculateFactorial(number);
         //Assert
         assertThat(result).isEqualTo(expectedResult);
     }
+
     @Test
-    @DisplayName("Should return null for a number bigger than 20")
+    @DisplayName("Returns null for factorial of a number greater than 20")
     void calculateFactorialTest2() {
         //Arrange
         Long number = 42L;
@@ -100,8 +105,9 @@ class BasicNumPropertiesServiceTest {
         //Assert
         assertThat(result).isEqualTo(null);
     }
+
     @Test
-    @DisplayName("Should return one for number zero")
+    @DisplayName("Returns 1 as the factorial of zero")
     void calculateFactorialTest3() {
         //Arrange
         Long number = 0L;
@@ -112,7 +118,7 @@ class BasicNumPropertiesServiceTest {
     }
 
     @Test
-    @DisplayName("Should return true for a prime number")
+    @DisplayName("Identifies a prime number as true")
     void isPrimeTest1() {
         //Arrange
         Long number = 13L;
@@ -120,8 +126,9 @@ class BasicNumPropertiesServiceTest {
         boolean result = basicNumPropertiesService.isPrime(number);
         assertThat(result).isTrue();
     }
+
     @Test
-    @DisplayName("Should return false for number zero")
+    @DisplayName("Identifies zero as not prime")
     void isPrimeTest2() {
         //Arrange
         Long number = 0L;
@@ -129,6 +136,4 @@ class BasicNumPropertiesServiceTest {
         boolean result = basicNumPropertiesService.isPrime(number);
         assertThat(result).isFalse();
     }
-
-
 }

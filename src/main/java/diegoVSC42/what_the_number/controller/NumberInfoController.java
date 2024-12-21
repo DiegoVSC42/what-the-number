@@ -16,7 +16,7 @@ public class NumberInfoController {
     public ResponseEntity<NumberInfo> getNumberInfo(@PathVariable("number") Long number) {
 
         NumberInfoService service = new NumberInfoService();
-        return ResponseEntity.ok(service.calculations(number));
+        return ResponseEntity.ok(service.calculations(Math.abs(number)));
 
     }
 }
