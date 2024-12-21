@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class BasicNumPropertiesServiceTest {
 
     @Autowired
-    private BasicNumPropertiesService basicNumPropertiesService;
+    private BasicNumPropertiesService service;
 
     @Test
     @DisplayName("Returns all divisors of a number with multiple divisors")
@@ -23,7 +23,7 @@ class BasicNumPropertiesServiceTest {
         Long number = 42L;
         List<Long> expectedDivisors = new ArrayList<>(List.of(1L, 2L, 3L, 6L, 7L, 14L, 21L, 42L));
         //Act
-        List<Long> divisors = basicNumPropertiesService.calculateDivisors(number);
+        List<Long> divisors = service.calculateDivisors(number);
         //Assert
         assertThat(divisors).isEqualTo(expectedDivisors);
     }
@@ -34,7 +34,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 137L;
         //Act
-        List<Long> divisors = basicNumPropertiesService.calculateDivisors(number);
+        List<Long> divisors = service.calculateDivisors(number);
         //Assert
         assertThat(divisors.size()).isEqualTo(2);
     }
@@ -45,7 +45,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 0L;
         //Act
-        List<Long> divisors = basicNumPropertiesService.calculateDivisors(number);
+        List<Long> divisors = service.calculateDivisors(number);
         //Assert
         assertThat(divisors).isEmpty();
     }
@@ -56,7 +56,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 42L;
         //Act
-        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        List<Long> multiples = service.calculateMultiples(number);
         //Assert
         assertThat(multiples.size()).isEqualTo(10);
     }
@@ -67,7 +67,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 0L;
         //Act
-        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        List<Long> multiples = service.calculateMultiples(number);
         //Assert
         assertThat(multiples).isEmpty();
     }
@@ -78,7 +78,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = Long.MAX_VALUE / 9;
         //Act
-        List<Long> multiples = basicNumPropertiesService.calculateMultiples(number);
+        List<Long> multiples = service.calculateMultiples(number);
         //Assert
         assertThat(multiples).isEmpty();
     }
@@ -90,7 +90,7 @@ class BasicNumPropertiesServiceTest {
         Long number = 12L;
         Long expectedResult = 479001600L;
         //Act
-        Long result = basicNumPropertiesService.calculateFactorial(number);
+        Long result = service.calculateFactorial(number);
         //Assert
         assertThat(result).isEqualTo(expectedResult);
     }
@@ -101,7 +101,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 42L;
         //Act
-        Long result = basicNumPropertiesService.calculateFactorial(number);
+        Long result = service.calculateFactorial(number);
         //Assert
         assertThat(result).isEqualTo(null);
     }
@@ -112,7 +112,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 0L;
         //Act
-        Long result = basicNumPropertiesService.calculateFactorial(number);
+        Long result = service.calculateFactorial(number);
         //Assert
         assertThat(result).isEqualTo(1L);
     }
@@ -123,7 +123,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 13L;
         //Act
-        boolean result = basicNumPropertiesService.isPrime(number);
+        boolean result = service.isPrime(number);
         assertThat(result).isTrue();
     }
 
@@ -133,7 +133,7 @@ class BasicNumPropertiesServiceTest {
         //Arrange
         Long number = 0L;
         //Act
-        boolean result = basicNumPropertiesService.isPrime(number);
+        boolean result = service.isPrime(number);
         assertThat(result).isFalse();
     }
 }

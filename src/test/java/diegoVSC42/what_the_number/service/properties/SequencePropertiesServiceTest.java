@@ -14,14 +14,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 class SequencePropertiesServiceTest {
 
     @Autowired
-    SequencePropertiesService sequencePropertiesService;
+    SequencePropertiesService service;
 
     // Fibonacci Sequence Tests
     @Test
     @DisplayName("Fibonacci Sequence: nth term should be null for number 0")
     void calculateFibonacciSequenceTest1() {
         Long number = 0L;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.nthFibonacciTerm()).isNull();
     }
 
@@ -29,7 +29,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Fibonacci Sequence: position should be 1 for number 0")
     void calculateFibonacciSequenceTest2() {
         Long number = 0L;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.position()).isEqualTo(1);
     }
 
@@ -37,7 +37,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Fibonacci Sequence: number 0 should be in the sequence")
     void calculateFibonacciSequenceTest3() {
         Long number = 0L;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.isInFibonacci()).isTrue();
     }
 
@@ -45,7 +45,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Fibonacci Sequence: nth term should be null for a very large number")
     void calculateFibonacciSequenceTest4() {
         Long number = Long.MAX_VALUE;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.nthFibonacciTerm()).isNull();
     }
 
@@ -53,7 +53,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Fibonacci Sequence: position should be null for a very large number")
     void calculateFibonacciSequenceTest5() {
         Long number = Long.MAX_VALUE;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.position()).isNull();
     }
 
@@ -61,7 +61,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Fibonacci Sequence: very large number should not be in the sequence")
     void calculateFibonacciSequenceTest6() {
         Long number = Long.MAX_VALUE;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.isInFibonacci()).isFalse();
     }
 
@@ -70,7 +70,7 @@ class SequencePropertiesServiceTest {
     void calculateFibonacciSequenceTest7() {
         Long number = 21L;
         Long expectedValue = 10946L;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.nthFibonacciTerm()).isEqualTo(expectedValue);
     }
 
@@ -79,7 +79,7 @@ class SequencePropertiesServiceTest {
     void calculateFibonacciSequenceTest8() {
         Long number = 21L;
         Long expectedPosition = 8L;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.position()).isEqualTo(expectedPosition);
     }
 
@@ -87,7 +87,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Fibonacci Sequence: number 21 should be in the sequence")
     void calculateFibonacciSequenceTest9() {
         Long number = 21L;
-        FibonacciSequence result = sequencePropertiesService.calculateFibonacciSequence(number);
+        FibonacciSequence result = service.calculateFibonacciSequence(number);
         assertThat(result.isInFibonacci()).isTrue();
     }
 
@@ -96,7 +96,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: nth term should be null for number 0")
     void calculateTriangularSequenceTest1() {
         Long number = 0L;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.nthTriangularTerm()).isNull();
     }
 
@@ -104,7 +104,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: position should be null for number 0")
     void calculateTriangularSequenceTest2() {
         Long number = 0L;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.position()).isNull();
     }
 
@@ -112,7 +112,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: number 0 should not be in the sequence")
     void calculateTriangularSequenceTest3() {
         Long number = 0L;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.isInTriangular()).isFalse();
     }
 
@@ -120,7 +120,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: nth term should be null for a very large number")
     void calculateTriangularSequenceTest4() {
         Long number = Long.MAX_VALUE;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.nthTriangularTerm()).isNull();
     }
 
@@ -128,7 +128,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: position should be null for a very large number")
     void calculateTriangularSequenceTest5() {
         Long number = Long.MAX_VALUE;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.position()).isNull();
     }
 
@@ -136,7 +136,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: very large number should not be in the sequence")
     void calculateTriangularSequenceTest6() {
         Long number = Long.MAX_VALUE;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.isInTriangular()).isFalse();
     }
 
@@ -145,7 +145,7 @@ class SequencePropertiesServiceTest {
     void calculateTriangularSequenceTest7() {
         Long number = 21L;
         Long expectedTerm = 231L;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.nthTriangularTerm()).isEqualTo(expectedTerm);
     }
 
@@ -154,7 +154,7 @@ class SequencePropertiesServiceTest {
     void calculateTriangularSequenceTest8() {
         Long number = 21L;
         Long expectedPosition = 6L;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.position()).isEqualTo(expectedPosition);
     }
 
@@ -162,7 +162,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Triangular Sequence: number 21 should be in the sequence")
     void calculateTriangularSequenceTest9() {
         Long number = 21L;
-        TriangularSequence result = sequencePropertiesService.calculateTriangularSequence(number);
+        TriangularSequence result = service.calculateTriangularSequence(number);
         assertThat(result.isInTriangular()).isTrue();
     }
 
@@ -171,7 +171,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: nth term should be null for number 0")
     void calculateSquareSequenceTest1() {
         Long number = 0L;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.nthSquareTerm()).isNull();
     }
 
@@ -179,7 +179,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: position should be null for number 0")
     void calculateSquareSequenceTest2() {
         Long number = 0L;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.position()).isNull();
     }
 
@@ -187,7 +187,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: number 0 should not be in the sequence")
     void calculateSquareSequenceTest3() {
         Long number = 0L;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.isInSquare()).isFalse();
     }
 
@@ -195,7 +195,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: nth term should be null for a very large number")
     void calculateSquareSequenceTest4() {
         Long number = Long.MAX_VALUE;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.nthSquareTerm()).isNull();
     }
 
@@ -203,7 +203,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: position should be null for a very large number")
     void calculateSquareSequenceTest5() {
         Long number = Long.MAX_VALUE;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.position()).isNull();
     }
 
@@ -211,7 +211,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: very large number should not be in the sequence")
     void calculateSquareSequenceTest6() {
         Long number = Long.MAX_VALUE;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.isInSquare()).isFalse();
     }
 
@@ -220,7 +220,7 @@ class SequencePropertiesServiceTest {
     void calculateSquareSequenceTest7() {
         Long number = 25L;
         Long expectedTerm = 625L;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.nthSquareTerm()).isEqualTo(expectedTerm);
     }
 
@@ -229,7 +229,7 @@ class SequencePropertiesServiceTest {
     void calculateSquareSequenceTest8() {
         Long number = 25L;
         Long expectedPosition = 5L;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.position()).isEqualTo(expectedPosition);
     }
 
@@ -237,7 +237,7 @@ class SequencePropertiesServiceTest {
     @DisplayName("Square Sequence: number 25 should be in the sequence")
     void calculateSquareSequenceTest9() {
         Long number = 25L;
-        SquareSequence result = sequencePropertiesService.calculateSquareSequence(number);
+        SquareSequence result = service.calculateSquareSequence(number);
         assertThat(result.isInSquare()).isTrue();
     }
 }
