@@ -1,5 +1,8 @@
 package diegoVSC42.what_the_number.service.properties;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class AdvancedNumPropertiesService {
     public boolean calculateHarshad(Long number) {
         String numStr = String.valueOf(number);
@@ -36,12 +39,11 @@ public class AdvancedNumPropertiesService {
             long powerOfTwo = 2;
             for (long i = 0; i < number; i++) {
                 if ((Math.pow(powerOfTwo, i) - 1) == (number)) {
-
                     return true;
                 }
             }
         }
 
-        return number == 0;
+        return number != 0;
     }
 }
