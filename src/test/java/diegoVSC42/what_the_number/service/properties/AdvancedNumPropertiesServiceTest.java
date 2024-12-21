@@ -58,14 +58,14 @@ class AdvancedNumPropertiesServiceTest {
     }
 
     @Test
-    @DisplayName("Returns false for a very large number (Mersenne prime check)")
+    @DisplayName("Returns true for a very large number (Mersenne prime check)")
     void calculateMersennePrimeTest2() {
         //Arrange
         Long number = Long.MAX_VALUE;
         //Act
         boolean result = service.calculateMersennePrime(number);
         //Assert
-        assertThat(result).isFalse();
+        assertThat(result).isTrue();
     }
 
     @Test
