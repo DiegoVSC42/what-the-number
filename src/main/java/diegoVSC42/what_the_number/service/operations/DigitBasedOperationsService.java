@@ -1,5 +1,8 @@
 package diegoVSC42.what_the_number.service.operations;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class DigitBasedOperationsService {
 
     public Long calculateNumberOfDigits(Long number){
