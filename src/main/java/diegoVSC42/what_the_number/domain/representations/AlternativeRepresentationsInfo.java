@@ -10,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AlternativeRepresentationsInfo {
+    private String decimal;
     private String binary;
     private String hexadecimal;
     private String octal;

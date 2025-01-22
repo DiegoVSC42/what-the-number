@@ -85,6 +85,7 @@ public class NumberInfo {
         AlternativeRepresentationsInfo properties = new AlternativeRepresentationsInfo();
         AlternativeRepresentationsService alternativeRepresentationsService = new AlternativeRepresentationsService();
 
+        properties.setDecimal(String.valueOf(value));
         properties.setBinary(alternativeRepresentationsService.calculateBinary(value));
         properties.setHexadecimal(alternativeRepresentationsService.calculateHexadecimal(value));
         properties.setOctal(alternativeRepresentationsService.calculateOctal(value));
