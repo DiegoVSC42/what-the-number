@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
+  h2 {
+    align-items: start;
+  }
 }
 .advanced {
   display: flex;

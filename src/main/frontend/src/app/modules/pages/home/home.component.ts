@@ -8,6 +8,7 @@ import { AdvancedNumPropertiesComponent } from '../../components/number-related/
 import { DigitBasedOperationsComponent } from '../../components/number-related/digit-based-operations/digit-based-operations.component';
 import { AlternativeRepresentationsComponent } from '../../components/number-related/alternative-representations/alternative-representations.component';
 import { OtherMathematicalOperationsComponent } from '../../components/number-related/other-mathematical-operations/other-mathematical-operations.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -20,14 +21,18 @@ import { OtherMathematicalOperationsComponent } from '../../components/number-re
     DigitBasedOperationsComponent,
     AlternativeRepresentationsComponent,
     OtherMathematicalOperationsComponent,
+    FooterComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   numberInfo: NumberInfo | null = null;
 
   constructor(private numberInfoService: NumberInfoService) {}
+  ngOnInit(): void {
+    // this.analyzeNumber('10');
+  }
 
   analyzeNumber(value: string) {
     this.numberInfoService
