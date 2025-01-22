@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: diegoVSC42.what_the_number.service.representations.AlternativeRepresentationsServiceTest
--------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in diegoVSC42.what_the_number.service.representations.AlternativeRepresentationsServiceTest
