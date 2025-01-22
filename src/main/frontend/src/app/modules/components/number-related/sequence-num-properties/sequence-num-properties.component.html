@@ -1,0 +1,64 @@
+<div class="sequence_properties">
+  <h2>Sequence Properties:</h2>
+  @if (numberInfo.sequencePropertiesInfo.fibonacciSequence.isInFibonacci) {
+  <div class="sequence">
+    <div class="circle green_circle"></div>
+    <p>Belongs to Fibonacci Sequence</p>
+  </div>
+  <p>
+    {{ numberInfo.value }}{{ ordinalSufix(numberInfo.value) }} number in the
+    sequence:
+    {{ numberInfo.sequencePropertiesInfo.fibonacciSequence.nthFibonacciTerm }}
+  </p>
+  <p>
+    Position in the sequence:
+    {{ numberInfo.sequencePropertiesInfo.fibonacciSequence.position }}
+  </p>
+  }@else {
+  <div class="sequence">
+    <div class="circle red_circle"></div>
+    <p>Belongs to Fibonacci Sequence</p>
+  </div>
+  } @if (numberInfo.sequencePropertiesInfo.triangularSequence.isInTriangular) {
+  <div class="sequence">
+    <div class="circle green_circle"></div>
+    <p>Belongs to Triangular Sequence</p>
+  </div>
+  <p>
+    {{ numberInfo.value }}{{ ordinalSufix(numberInfo.value) }} number in the
+    sequence:
+    {{ numberInfo.sequencePropertiesInfo.triangularSequence.nthTriangularTerm }}
+  </p>
+  <p>
+    Position in the sequence:
+    {{ numberInfo.sequencePropertiesInfo.triangularSequence.position }}
+  </p>
+  }@else {
+  <div class="sequence">
+    <div class="circle red_circle"></div>
+    <p>Belongs to Triangular Sequence</p>
+    <div class="sequence_info"></div>
+  </div>
+  } @if (numberInfo.sequencePropertiesInfo.squareSequence.isInSquare) {
+  <div class="sequence">
+    <div class="circle green_circle"></div>
+    <p>Belongs to Square Sequence</p>
+    <div class="sequence_info"></div>
+  </div>
+  <p>
+    {{ numberInfo.value }}{{ ordinalSufix(numberInfo.value) }} number in the
+    sequence:
+    {{ numberInfo.sequencePropertiesInfo.squareSequence.nthSquareTerm }}
+  </p>
+  <p>
+    Position in the sequence:
+    {{ numberInfo.sequencePropertiesInfo.squareSequence.position }}
+  </p>
+  }@else {
+  <div class="sequence">
+    <div class="circle red_circle"></div>
+    <p>Belongs to Square Sequence</p>
+    <div class="sequence_info"></div>
+  </div>
+  }
+</div>

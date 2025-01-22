@@ -1,0 +1,13 @@
+.sequence_properties {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+.sequence {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

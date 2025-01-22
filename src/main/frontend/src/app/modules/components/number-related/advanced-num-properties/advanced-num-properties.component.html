@@ -1,0 +1,34 @@
+<div class="advanced_properties">
+  <h2>Advanced Number Properties:</h2>
+  @if (numberInfo.advancedNumPropertiesInfo.palindrome) {
+  <div class="advanced">
+    <div class="circle green_circle"></div>
+    <p>Palindrome Number</p>
+  </div>
+  }@else {
+  <div class="advanced">
+    <div class="circle red_circle"></div>
+    <p>Palindrome Number</p>
+  </div>
+  } @if (numberInfo.advancedNumPropertiesInfo.mersenne) {
+  <div class="advanced">
+    <div class="circle green_circle"></div>
+    <p>Mersenne Number</p>
+  </div>
+  }@else {
+  <div class="advanced">
+    <div class="circle red_circle"></div>
+    <p>Mersenne Number</p>
+  </div>
+  } @if (numberInfo.advancedNumPropertiesInfo.harshad) {
+  <div class="advanced">
+    <div class="circle green_circle"></div>
+    <p>Harshad Number</p>
+  </div>
+  }@else {
+  <div class="advanced">
+    <div class="circle red_circle"></div>
+    <p>Harshad Number</p>
+  </div>
+  }
+</div>

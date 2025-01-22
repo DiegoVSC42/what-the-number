@@ -1,0 +1,43 @@
+<h2>Basic Number Properties:</h2>
+<div>
+  <p>Divisors: {{ numberInfo.basicNumPropertiesInfo.divisors }}</p>
+  <p>
+    Divisors Quantity:
+    {{ numberInfo.basicNumPropertiesInfo.divisorsCount }}
+  </p>
+  <p>
+    Ten First Multiples:
+    {{ numberInfo.basicNumPropertiesInfo.tenFirstMultiples }}
+  </p>
+
+  @if( numberInfo.basicNumPropertiesInfo.factorial != null){
+  <p>Factorial: {{ numberInfo.basicNumPropertiesInfo.factorial }}</p>
+  }@else {
+  <p>Factorial: number is too big !</p>
+  }
+  <p>Parity: {{ numberInfo.basicNumPropertiesInfo.parity }}</p>
+
+  <div class="perfectAndPrime">
+    @if (numberInfo.basicNumPropertiesInfo.perfect) {'
+    <div class="condition">
+      <p>Perfect</p>
+      <div class="circle green_circle"></div>
+    </div>
+    }@else {
+    <div class="condition">
+      <p>Perfect</p>
+      <div class="circle red_circle"></div>
+    </div>
+    } @if (numberInfo.basicNumPropertiesInfo.prime) {'
+    <div class="condition">
+      <p>Prime</p>
+      <div class="circle green_circle"></div>
+    </div>
+    }@else {
+    <div class="condition">
+      <p>Prime</p>
+      <div class="circle red_circle"></div>
+    </div>
+    }
+  </div>
+</div>

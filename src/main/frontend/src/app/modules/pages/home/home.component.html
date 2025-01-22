@@ -1,0 +1,46 @@
+<main>
+  <div class="container">
+    <h1>What The Number</h1>
+    <label for="number"
+      ><strong>Enter the number to be analyzed:</strong></label
+    >
+    <input
+      #numberInput
+      type="number"
+      placeholder="Enter a number"
+      (keydown.enter)="analyzeNumber(numberInput.value)"
+    />
+    <button class="btn btn-primary" (click)="analyzeNumber(numberInput.value)">
+      Analyze
+    </button>
+
+    @if(numberInfo) {
+    <h1>{{ numberInfo.value }}</h1>
+    <div class="properties-container">
+      <app-basic-num-properties
+        [numberInfo]="numberInfo"
+      ></app-basic-num-properties>
+
+      <app-sequence-num-properties
+        [numberInfo]="numberInfo"
+      ></app-sequence-num-properties>
+
+      <app-advanced-num-properties
+        [numberInfo]="numberInfo"
+      ></app-advanced-num-properties>
+
+      <app-digit-based-operations
+        [numberInfo]="numberInfo"
+      ></app-digit-based-operations>
+
+      <app-alternative-representations
+        [numberInfo]="numberInfo"
+      ></app-alternative-representations>
+
+      <app-other-mathematical-operations
+        [numberInfo]="numberInfo"
+      ></app-other-mathematical-operations>
+    </div>
+    }
+  </div>
+</main>
